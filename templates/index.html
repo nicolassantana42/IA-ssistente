@@ -1,1 +1,63 @@
-##SUA PARTE JEFFERSON
+segue o index.html : <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAssistente Criativo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-magic-wand-sparkles"></i> IAssistente Criativo ✨</h1>
+            <p>Dê um tema e a Inteligência Artificial criará um texto exclusivo para você.</p>
+        </header>
+
+        <main>
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <i class="fas fa-keyboard"></i>
+                    <input type="text" id="prompt-input" placeholder="Ex: A evolução dos videogames">
+                </div>
+                <button id="generate-btn">
+                    <i class="fas fa-paper-plane"></i> Gerar Texto
+                </button>
+            </div>
+
+            <div class="response-area">
+                <div class="response-header">
+                    <div class="title-wrapper">
+                        <i class="fas fa-comment-dots"></i>
+                        <h2>Texto Gerado</h2>
+                    </div>
+                    <button id="copy-btn" class="util-btn hidden" title="Copiar Texto">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <div id="loading" class="spinner-wrapper hidden">
+                    <div class="spinner"></div>
+                    <p>Gerando, por favor aguarde...</p>
+                </div>
+                <div id="response-output">
+                    <p class="placeholder">A resposta da IA aparecerá aqui.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Projeto de Git, GitHub e Integração com IA.</p>
+            <button id="theme-toggle" class="util-btn" title="Alternar Tema">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{{ url_for('static', filename='js/particles-config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
