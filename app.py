@@ -40,7 +40,21 @@ except Exception as e:
 # --- FIM DA CONFIGURAÇÃO ---
 
 ##COLE SEU CODIGO AQUI GUSTAVO!!!!!!!
+import sqlite3 # Necessário no início do arquivo
 
+def init_db():
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            prompt TEXT NOT NULL,
+            response TEXT NOT NULL,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+    conn.commit()
+    conn.close()
 
 
 
