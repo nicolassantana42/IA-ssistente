@@ -39,7 +39,7 @@ except Exception as e:
     model = None
 # --- FIM DA CONFIGURAÇÃO ---
 
-##COLE SEU CODIGO AQUI GUSTAVO!!!!!!!
+
 import sqlite3 # Necessário no início do arquivo
 
 def init_db():
@@ -55,19 +55,6 @@ def init_db():
     ''')
     conn.commit()
     conn.close()
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @app.route('/')
